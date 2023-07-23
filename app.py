@@ -12,8 +12,8 @@ app = Flask(__name__)
 logging.basicConfig(filename='app.log', level=logging.ERROR)
 
 # Line botのAPI設定
-line_bot_api = LineBotApi(config.ACCESS_TOKEN)
-handler = WebhookHandler(config.CHANNEL_SECRET)
+line_bot_api = LineBotApi(os.environ.get("CHANNEL_ACCESS_TOKEN"))
+handler = WebhookHandler(os.environ.get("CHANNEL_SECRET"))
 
 @app.route("/callback", methods=["POST"])
 def callback():
