@@ -1,2 +1,2 @@
 Flask
-line-bot-sd
+line-bot-sdk
